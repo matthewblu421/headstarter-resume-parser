@@ -22,14 +22,14 @@ class FileUpload extends React.Component{
         const data = new FormData() 
         data.append('file', this.state.selectedFile)
         console.warn(this.state.selectedFile);
-        let url = "http://localhost:8000/upload.php";
+        let url = "http://localhost:4000/uploadFile";
  
         axios.post(url, data, { // receive two parameter endpoint url ,form data 
         })
         .then(res => { // then print response status
             console.warn(res);
         })
- 
+
     }
  
     render(){
@@ -43,7 +43,10 @@ class FileUpload extends React.Component{
                             <br />
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label className="text-white">Select File :</label>
+                                <h3>
+        Upload CV/Resume
+      </h3>
+                                    <label className="text-white">Select File:</label>
                                     <input type="file" className="form-control" name="upload_file" onChange={this.handleInputChange} />
                                 </div>
                             </div>
