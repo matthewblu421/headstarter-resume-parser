@@ -14,15 +14,15 @@ class FileUpload extends React.Component{
  
     handleInputChange(event) {
         this.setState({
-            selectedFile: event.target.files[0],
+            selectedFile: event.target.files[0], 
           })
     }
  
     submit(){
         const data = new FormData() 
-        data.append('file', this.state.selectedFile)
+        data.append('resume', this.state.selectedFile)
         console.warn(this.state.selectedFile);
-        let url = "http://localhost:4000/uploadFile";
+        let url = "http://localhost:5000/single";
  
         axios.post(url, data, { // receive two parameter endpoint url ,form data 
         })
@@ -47,7 +47,7 @@ class FileUpload extends React.Component{
         Upload CV/Resume
       </h3>
                                     <label className="text-white">Select File:</label>
-                                    <input type="file" className="form-control" name="upload_file" onChange={this.handleInputChange} />
+                                    <input type="file" className="form-control" name='resume' onChange={this.handleInputChange} />
                                 </div>
                             </div>
  
